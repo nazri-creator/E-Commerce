@@ -41,31 +41,31 @@
         <div class="bg-white p-7 w-1/2 rounded-xl">
             <div class="font-semibold">Payment Methode</div>
 
-                <div class="mt-4">
-                    <select
-                        id="paymentMethod"
-                        class="w-full border rounded-lg p-2"
-                        onchange="handlePaymentChange()"
-                    >
-                        <option value="">--- Pilih Payment ---</option>
-                        <option value="gopay">Gopay</option>
-                        <option value="dana">Dana</option>
-                        <option value="ovo">OVO</option>
-                        <option value="bri">BRI</option>
-                        <option value="mandiri">Mandiri</option>
-                    </select>
-                </div>
+            <div class="mt-4">
+                <select
+                    id="paymentMethod"
+                    class="w-full border rounded-lg p-2"
+                    onchange="handlePaymentChange()"
+                >
+                    <option value="">--- Pilih Payment ---</option>
+                    <option value="gopay">Gopay</option>
+                    <option value="dana">Dana</option>
+                    <option value="ovo">OVO</option>
+                    <option value="bri">BRI</option>
+                    <option value="mandiri">Mandiri</option>
+                </select>
+            </div>
 
-                <div id="paymentDetail" class="hidden mt-6 text-center">
-                    <p class="text-gray-600 text-sm">Nomor Pembayaran</p>
-                    <p id="paymentNumber" class="font-bold text-lg mt-1"></p>
+            <div id="paymentDetail" class="hidden mt-6 text-center">
+                <p class="text-gray-600 text-sm">Nomor Pembayaran</p>
+                <p id="paymentNumber" class="font-bold text-lg mt-1"></p>
 
-                    <img
-                        id="paymentQr"
-                        class="w-40 h-40 mx-auto mt-4"
-                        alt="QR Code"
-                    >
-                </div>
+                <img
+                    id="paymentQr"
+                    class="w-40 h-40 mx-auto mt-4"
+                    alt="QR Code"
+                >
+            </div>
         </div>
 
         <div class="bg-white p-7 w-1/2 h-125 rounded-xl">
@@ -85,19 +85,9 @@
                 </div>
 
                 <div class="absolute bottom-0 right-0 flex items-center">
-                    <button
-                        onclick="decreaseQty()"
-                        class="bg-gray-300 w-6 h-6 rounded-md hover:bg-gray-400 hover:text-white transition">
-                        -
-                    </button>
-
+                    <button onclick="decreaseQty()" class="bg-gray-300 w-6 h-6 rounded-md">-</button>
                     <div id="qty" class="text-lg mx-2">1</div>
-
-                    <button
-                        onclick="increaseQty()"
-                        class="bg-gray-300 w-6 h-6 rounded-md hover:bg-gray-400 hover:text-white transition">
-                        +
-                    </button>
+                    <button onclick="increaseQty()" class="bg-gray-300 w-6 h-6 rounded-md">+</button>
                 </div>
             </div>
 
@@ -105,11 +95,11 @@
 
             <div class="mt-4">
                 <div class="flex justify-between text-sm my-2 text-gray-400">
-                <div>Sub Total</div>
+                    <div>Sub Total</div>
                     <div id="subTotal">299.000,-</div>
                 </div>
 
-                <div class="flex justify-between text-sm my-2  text-gray-400">
+                <div class="flex justify-between text-sm my-2 text-gray-400">
                     <div>Shipping Cast</div>
                     <div>Free</div>
                 </div>
@@ -121,16 +111,24 @@
             </div>
 
             <div class="flex justify-between mt-15">
-                <div class="border border-black rounded-md py-1.5 w-20 text-center">
-                    Back
-                </div>
-                <div class="border border-black rounded-md py-1.5 w-20 text-center">
+                <a href="info.html">
+                    <div class="border border-black rounded-md py-1.5 w-20 text-center cursor-pointer hover:bg-black hover:text-white transition">
+                        Back
+                    </div>
+                </a>
+
+                <div   class="border border-black rounded-md py-1.5 w-20 text-center cursor-pointer hover:bg-black hover:text-white transition"
+                    onclick="handlePay(event)"
+                >
                     Pay
                 </div>
             </div>
         </div>
     </div>
     </section>
+    
+    <div id="toast" class="fixed top-5 right-5 hidden px-6 py-3 rounded-lg text-white shadow-lg z-50"></div>
+
     <script>
       function handlePaymentChange() {
         const method = document.getElementById("paymentMethod").value;
@@ -148,17 +146,17 @@
           number.textContent = "67890";
           qr.src =
             "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=DANA-67890";
-        }else if (method === "ovo") {
+        } else if (method === "ovo") {
           detail.classList.remove("hidden");
           number.textContent = "92845";
           qr.src =
             "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=OVO-92845";
-        }else if (method === "bri") {
+        } else if (method === "bri") {
           detail.classList.remove("hidden");
           number.textContent = "82792";
           qr.src =
             "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=BRI-82792";
-        }else if (method === "mandiri") {
+        } else if (method === "mandiri") {
           detail.classList.remove("hidden");
           number.textContent = "92382";
           qr.src =
@@ -170,6 +168,7 @@
         }
       }
     </script>
+
     <script>
         let qty = 1;
         const pricePerItem = 299000;
@@ -190,21 +189,54 @@
 
         function increaseQty() {
             if (qty < 999) {
-            qty++;
-            qtyEl.textContent = qty;
-            updatePrice();
+                qty++;
+                qtyEl.textContent = qty;
+                updatePrice();
             }
         }
 
         function decreaseQty() {
             if (qty > 1) {
-            qty--;
-            qtyEl.textContent = qty;
-            updatePrice();
+                qty--;
+                qtyEl.textContent = qty;
+                updatePrice();
             }
         }
 
         updatePrice();
-    </script>   
-</body> 
+    </script>
+
+    <script>
+        function showToast(message, type) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.className =
+                "fixed top-5 right-5 px-6 py-3 rounded-lg text-white shadow-lg z-50 " +
+                (type === "error" ? "bg-red-500" : "bg-green-500");
+            toast.classList.remove("hidden");
+
+            setTimeout(() => {
+                toast.classList.add("hidden");
+            }, 2500);
+        }
+
+        function handlePay(event) {
+
+            const payment = document.getElementById("paymentMethod").value;
+
+            if (!payment) {
+                showToast("Pilih terlebih dahulu metode payment", "error");
+                return;
+            }
+
+            showToast("Payment berhasil 🎉", "success");
+
+            setTimeout(() => {
+                window.location.href = "critic.html";
+            }, 500);
+        }
+
+    </script>
+
+</body>
 </html>
