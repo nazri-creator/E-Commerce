@@ -499,6 +499,9 @@
   .bg-\[url\(\'\.\.\/foto\/footware\.jpg\'\)\] {
     background-image: url('../foto/footware.jpg');
   }
+  .bg-\[url\(\'\.\/foto\/footware\.jpg\'\)\] {
+    background-image: url('./foto/footware.jpg');
+  }
   .bg-cover {
     background-size: cover;
   }
