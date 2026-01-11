@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link href="/src/output.css" rel="stylesheet">
+    <title>Home</title>
+    <link href="./src/output.css" rel="stylesheet">
     <!-- CDN FLATICON -->
      <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
      <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-straight/css/uicons-thin-straight.css'>
      <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
      <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
      <!-- FONT -->
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!--Stylesheet-->
@@ -18,65 +19,53 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     </head>
-<body class="bg-[#E9E3DF]" class="font-[#Poppins]">
-    <nav class="bg-[#E9E3DF] h-20 flex items-center justify-between shadow-lg">
-        <div>
-            <img src="./foto/logo.png" class="w-40">
-        </div>
-        <div class="text-center text-2xl text-[#465C88] font-bold">
-            IRIS<br>FOOTWARE
-        </div>
-        <div class="flex gap-3 p-2">
-           <div class="bg-white h-9 w-9 rounded-full flex items-center justify-between"><i class="fi fi-ts-shopping-cart ml-2.5"></i></div>
-           <div class="bg-white h-9 w-9 rounded-full flex items-center justify-between"><i class="fi fi-sr-user ml-2 text-xl"></i></div>
-        </div>
-    </nav>
-    <div class="flex items-center justify-between py-10 px-40">
-        <div class="w-full">
-            <div class="font-bold text-6xl">Max Baggie</div>
-            <div class="py-3">
-            <div class="bg-[#FF7A30] inline-flex w-35 p-3 rounded-md justify-center font-semibold">
-                <a href="formal.html" class="text-white">Formal Shoes</a>
-            </div>
-            </div>
-        </div>
-        <div class="flex justify-start">
-            <img src="/foto/formal.png">
-        </div>
-    </div>
+<body class="relative min-h-screen bg-[url('./foto/footware.jpg')] bg-cover bg-center font-['Poppins']">
 
-    <section class="grid grid-cols-3 pl-30 pt-4 rounded-xl">
-        <div class="p-10">
-                <div class="bg-[#465C88] shadow-lg p-7 w-80 rounded-xl">
-                    <img src="./foto/school.png" class="items-center pl-4 ">
-                    <a href="school.html">
-                        <div class="flex justify-center">
-                    <div class="bg-white text-black w-30 h-10 p-2 flex justify-center font-semibold rounded-xl">School</div></a>
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10">
+
+        <nav class="bg-[#E9E3DF] h-20 flex items-center justify-between shadow-lg">
+            <div>
+                <img src="./foto/logo.png" class="w-40">
+            </div>
+            <div class="text-center text-2xl text-[#465C88] font-bold">
+                IRIS<br>FOOTWARE
+            </div>
+            <div class="flex gap-3 p-2">
+                <div class="bg-white h-9 w-9 rounded-full flex items-center justify-center">
+                    <i class="fi fi-ts-shopping-cart"></i>
+                </div>
+                <div class="bg-white h-9 w-9 rounded-full flex items-center justify-center">
+                    <i class="fi fi-sr-user text-xl"></i>
+                </div>
+            </div>
+        </nav>
+
+        <section class="flex justify-center py-60 text-white">
+            <div class="w-160 text-center pl-10">
+                <div class="leading-relaxed text-xl">
+                    Brand kami hadir untuk kamu yang percaya bahwa sepatu lokal bisa tampil keren tanpa harus mahal. 
+                    Kami menggabungkan desain modern dengan bahan berkualitas, menciptakan sepatu yang stylish, 
+                    ringan, dan nyaman untuk aktivitas harian.
+                </div>
+
+                <div class="py-10 flex justify-center gap-4">
+                    <a href="index.html">
+                        <div class="bg-white text-black w-35 h-10 font-semibold rounded-full flex items-center justify-center hover:bg-[#465C88] hover:text-[#FF7A30] transition">
+                            Next
                         </div>
+                    </a>
+                    <a href="about.html">
+                        <div class="bg-white text-black w-10 h-10 font-semibold rounded-full flex items-center justify-center hover:bg-[#465C88] hover:text-[#FF7A30] transition">
+                            <i class="fi fi-tr-info flex justify-center"></i>
+                        </div>
+                    </a>
                 </div>
-        </div>         
-        <div class="p-10">
-                <div class="bg-[#465C88] shadow-lg p-7 w-80 rounded-xl">
-                    <div class="flex justify-center">
-                    <img src="./foto/sport.png" class="items-center w-56">
-                    </div>
-                    <a href="sport.html">
-                    <div class="flex justify-center">
-                    <div class="bg-white text-black w-30 h-10 p-2 flex justify-center font-semibold rounded-xl">Sport</div></a>
-                    </div>
-                </div>
-        </div>        
-        <div class="p-10">
-                <div class="bg-[#465C88] shadow-lg p-7 w-80 rounded-xl">
-                     <div class="flex justify-center">
-                    <img src="./foto/casual.png" class="items-center w-57">
-                     </div>
-                    <a href="casual.html">
-                        <div class="flex justify-center">
-                    <div class="bg-white text-black w-30 h-10 p-2 flex justify-center font-semibold rounded-xl">Casual</div></a>
-                </div>
-                </div>
-        </div>
-    </section>
+            </div>
+        </section>
+
+    </div>
 </body>
+
 </html>
